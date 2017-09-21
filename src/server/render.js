@@ -8,24 +8,17 @@
  */
 import { renderToString } from 'react-dom/server';
 import React from 'react';
-export default (renderMe, gists) => `<!DOCTYPE html>
+export default (jsxPayload, articles) => `<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Universal React Router 4 Demo</title>
-        <style>
-            body {
-                font-family: Helvetica Neue, Arial, sans-serif;
-                margin: 0;
-            }
-            html { box-sizing: border-box; }
-            *, *:before, *:after { box-sizing: inherit; }
-        </style>
+        <link rel="stylesheet" href="/static/enroute.css" media="all" />
+        <title>En route</title>
     </head>
     <body>
-        <div id="app">${renderToString(renderMe)}</div>
-        ${gists ? `
-            <script>window.__gists__ = ${JSON.stringify(gists)};</script>
+        <div id="app">${renderToString(jsxPayload)}</div>
+        ${articles ? `
+            <script>window.__articles__ = ${JSON.stringify(articles)};</script>
             <script src="/static/client.js"></script>
         ` : ''}
     </body>

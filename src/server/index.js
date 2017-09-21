@@ -20,7 +20,22 @@ import fetch from 'node-fetch';
 
 const routes = [
     '/',
-    '/g/:gistId'
+    '/articles/:articleSlug'
+];
+
+const sampleArticles = [
+    {
+        "id": "1001",
+        "title": "Some article index 1001",
+        "heroImage": "https://cdn-images-1.medium.com/max/2000/1*7mopFijl5g5R0Srj6GS7nQ.jpeg",
+        "published": "Sep 10, 2017"
+    },
+    {
+        "id": "1002",
+        "title": "Some article index 2002",
+        "heroImage": "https://cdn-images-1.medium.com/max/2000/1*-v9a_aweRSsi3BAWeqb-yQ.jpeg",
+        "published": "Aug 27, 2017"
+    }
 ];
 
 sourceMapSupport.install();
@@ -34,20 +49,14 @@ app.get('*', (req, res) => {
         res.status(404).send(render(<NoMatch />));
         return;
     }
-    fetch('https://api.github.com/gists')
-        .then(r => r.json())
-        .then(gists => {
-            res.status(200).send(render(
-                (
-                    <Router context={{}} location={req.url}>
-                        <App gists={gists} />
-                    </Router>
-                ), gists
-            ));
-        }).catch(err => {
-            console.error(err);
-            res.status(500).send(render(<Error />));
-        });
+    res.status(200).send(
+        render(
+            (<Router context={{}} location={req.url}>
+                <App articles={sampleArticles} />
+            </Router>),
+            sampleArticles
+        )
+    );
 });
 
 app.listen(3000, () => console.log('Demo app listening on port 3000'));

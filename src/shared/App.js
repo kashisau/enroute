@@ -19,30 +19,12 @@ const style = {
     alignItems: 'stretch'
 };
 
-export default ({ gists }) => (
+export default ({ articles }) => (
     <div style={style}>
-        <Sidebar>
-            {
-                gists ? gists.map(gist => (
-                        <SidebarItem key={gist.id}>
-                            <Link to={`/g/${gist.id}`}>
-                                {gist.description || '[no description]'}
-                            </Link>
-                        </SidebarItem>
-                    )) : (<p>Loading…</p>)
-            }
-        </Sidebar>
         <Main>
-            <Route path="/" exact component={Home} />
-            {
-                gists && (
-                    <Route path="/g/:gistId" render={
-                        ({ match }) => (
-                            <Gist gist={gists.find(g => g.id === match.params.gistId)} />
-                        )
-                    } />
-                )
-            }
+            <Route path="/" exact>
+                <Home articles={articles} />
+            </Route>
         </Main>
     </div>
 );
