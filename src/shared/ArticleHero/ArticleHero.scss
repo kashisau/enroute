@@ -15,10 +15,27 @@
 
         color: #ffffff;
         text-shadow: #000 0px 2px 4px;
+
+        z-index: 20;
     }
 
     &-image {
         width: 100%;
         top: 0;
+
+        animation-name: zoomIn;
+        animation-duration: 2s;
+
+        z-index: 10;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1.0);
     }
 }

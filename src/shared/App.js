@@ -14,8 +14,10 @@ import { Link, Route } from 'react-router-dom';
 import './App.scss';
 
 export default ({ articles }) => (
-    <Route path="/" exact>
-        <Home articles={articles} />
-    </Route>
+    <div id="app">$
+        <Route path="/" exact>
+            <Home articles={articles} />
+        </Route>
+    </div>
 );
 

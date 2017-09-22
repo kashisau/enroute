@@ -13,7 +13,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'whatwg-fetch';
 
 render((
-    <Router>
-        <App articles={window.__articles__} />
-    </Router>
+    <div id="app">
+        <Router>
+            <App articles={window.__articles__} />
+        </Router>
+    </div>
 ), document.getElementById('app'));
