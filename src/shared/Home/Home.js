@@ -7,11 +7,12 @@
  * @since 09 Feb 2017
  */
 import React from 'react';
-import ArticleHero from './ArticleHero';
+import ArticleHero from '../ArticleHero/ArticleHero';
+import './Home.scss';
 
 export default ({articles}) => (
-    <div>
-        <h1>Articles</h1>
+    <div className="Home">
+        <img className="Home-logo" />
         {articles.map((article, key) => <ArticleHero article={article} key={key} />)}
     </div>
 );

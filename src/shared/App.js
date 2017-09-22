@@ -9,23 +9,13 @@
 import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import SidebarItem from './SidebarItem';
-import Main from './Main';
-import Gist from './Gist';
-import Home from './Home';
+import Home from './Home/Home';
 import { Link, Route } from 'react-router-dom';
-
-const style = {
-    display: 'flex',
-    alignItems: 'stretch'
-};
+import './App.scss';
 
 export default ({ articles }) => (
-    <div style={style}>
-        <Main>
-            <Route path="/" exact>
-                <Home articles={articles} />
-            </Route>
-        </Main>
-    </div>
+    <Route path="/" exact>
+        <Home articles={articles} />
+    </Route>
 );
 
