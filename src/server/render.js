@@ -16,7 +16,7 @@ export default (jsxPayload, articles) => `<!DOCTYPE html>
         <title>En route</title>
     </head>
     <body>
-        <div id="app">${renderToString(jsxPayload)}</div>
+        <div id="Enroute">${renderToString(jsxPayload)}</div>
         ${articles ? `
             <script type="text/javascript">window.__articles__ = ${JSON.stringify(articles)};</script>
             <script type="text/javascript" src="/static/client.js"></script>

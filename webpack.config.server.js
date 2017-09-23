@@ -12,6 +12,7 @@ const path = require('path');
 const srcPath = path.resolve(__dirname, 'src');
 const distPath = path.resolve(__dirname, 'dist');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: srcPath,
@@ -43,12 +44,21 @@ module.exports = {
                     //resolve-url-loader may be chained before sass-loader if necessary
                     use: ['css-loader', 'sass-loader']
                 })
-            }
+            },
         ]
     },
     externals: nodeExternals(),
     devtool: 'source-map',
     plugins: [
-        new ExtractTextPlugin('./enroute.css')
+        new ExtractTextPlugin('./enroute.css'),
+        new CopyWebpackPlugin([
+                { from: 'assets/**/*', to: './' },
+            ], {
+            ignore: [],
+            // By default, we only copy modified files during
+            // a watch or webpack-dev-server build. Setting this
+            // to `true` copies all files.
+            copyUnmodified: true
+        })
     ]
 };

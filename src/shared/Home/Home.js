@@ -12,7 +12,6 @@ import './Home.scss';
 
 export default ({articles}) => (
     <div className="Home">
-        <img className="Home-logo" />
         {articles.map((article, key) => <ArticleHero article={article} key={key} />)}
     </div>
 );

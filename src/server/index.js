@@ -24,13 +24,6 @@ const routes = [
 ];
 
 const sampleArticles = [
-    // {
-    //     "id": "1001",
-    //     "slug": "some-article-index-1001",
-    //     "title": "Some article index 1001",
-    //     "heroImage": "https://cdn-images-1.medium.com/max/2000/1*7mopFijl5g5R0Srj6GS7nQ.jpeg",
-    //     "published": "Sep 10, 2017"
-    // },
     {
         "id": "1002",
         "title": "Some article index 2002",
@@ -54,7 +47,7 @@ app.get('*', (req, res) => {
     res.status(200).send(
         render(
             (<Router context={{}} location={req.url}>
-                <div id="app"><App articles={sampleArticles} /></div>
+                <App articles={sampleArticles} />
             </Router>),
             sampleArticles
         )

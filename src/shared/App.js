@@ -7,14 +7,14 @@
  * @since 09 Feb 2017
  */
 import React, { Component } from 'react';
-import Sidebar from './Sidebar';
-import SidebarItem from './SidebarItem';
 import Home from './Home/Home';
+import Header from './Header/Header';
 import { Link, Route } from 'react-router-dom';
 import './App.scss';
 
 export default ({ articles }) => (
-    <div id="app">$
+    <div id="Enroute-app">
+        <Header />
         <Route path="/" exact>
             <Home articles={articles} />
         </Route>

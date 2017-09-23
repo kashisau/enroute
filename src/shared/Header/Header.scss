@@ -1,0 +1,16 @@
+.Header {
+    display: block;
+    margin: 0 2em;
+    z-index: 1000;
+
+    position: relative;
+    border-bottom: 1.5px solid rgba(255,255,255,0.75);
+
+    &-logo {
+        display: inline-block;
+        padding: 2em;
+        img {
+            height: 8em;
+        }
+    }
+}
