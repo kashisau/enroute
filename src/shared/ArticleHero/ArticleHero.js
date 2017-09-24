@@ -21,12 +21,15 @@ class ArticleHero extends React.Component {
 
     render() {
         return <div className={classnames("ArticleHero", { "is-active": this.state.active })}>
-            <a
-                href={`/article/${this.props.article.slug}`}
-                title={`Read article '${this.props.article.title}'`}
-                onMouseOver={() => this.setState({ active: true })}
-                onMouseOut={() => this.setState({ active: false })}>
-                <h1>{this.props.article.title}</h1></a>
+            <div className="ArticleHero-heading">
+                <a
+                    href={`/article/${this.props.article.slug}`}
+                    title={`Read article '${this.props.article.title}'`}
+                    onMouseOver={() => this.setState({ active: true })}
+                    onMouseOut={() => this.setState({ active: false })}>
+                    <h1>{this.props.article.title}</h1>
+                </a>
+            </div>
             <img className="ArticleHero-image" src={this.props.article.heroImage} />
         </div>
     }

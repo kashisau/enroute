@@ -8,44 +8,76 @@
 
     overflow: hidden;
 
-    h1 {
+    .ArticleHero-heading {
+        display: inline-block;
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 4%;
 
-        color: #ffffff;
-        text-shadow: rgba(0,0,0,0.65) 0px 2px 4px;
-        
-        font-size: 3em;
-        letter-spacing: -1.2;
         z-index: 20;
 
         &::after {
             content: ' ';
             display: block;
-            background-color: #ff0000;
-            height: 0.1em;
-            width: 100%;
-            position: relative;
-            bottom: 0px;
+
+            width: 250%;
+            height: 600%;
+
+            transform: translate(-50%, -50%);
+            /* Oval: */
+            background-image: radial-gradient(34% 50%, rgba(0,0,0,0.15) 34%, rgba(0,0,0,0.00) 100%);
+
+            position: absolute;
             z-index: 21;
+        }
 
-            box-shadow: #rgba(0,0,0,0.65) 0px 2px 4px;
+        a {
+            text-decoration: none;
+        }
 
-            transform: scaleX(0);
-            transform-origin: 0 0;
-
-            transition: transform 200ms ease-in-out;
+        h1 {
+            color: #ffffff;
+            text-shadow: rgba(0,0,0,0.65) 0px 2px 4px;
+            
+            font-size: 3em;
+            letter-spacing: -1.2;
+            position: relative;
+            z-index: 22;
+    
+            &::after {
+                content: ' ';
+                display: block;
+                background-color: #fff;
+                opacity: 0.75;
+                height: 0.1em;
+                width: 100%;
+                position: relative;
+                bottom: 0px;
+                z-index: 21;
+    
+                box-shadow: rgba(0,0,0,0.65) 0px 2px 4px;
+    
+                transform: scaleX(0);
+                transform-origin: 0 0;
+    
+                transition: transform 200ms ease-in-out;
+            }
         }
     }
 
+    
+
     &-image {
-        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
         top: 0;
 
         animation-name: zoomIn;
         animation-duration: 7s;
-        transform: scale(1.01);
+        transform: scale(1.01) translateX(-50%);
+        transform-origin: 25% center;
+        position: relative;
+        left: 50%;
 
         z-index: 10;
 
@@ -60,7 +92,7 @@
                 filter 1s ease-in-out,
                 transform 5s ease-in-out;
             filter: blur(3px);
-            transform: scale(1.05);
+            transform: scale(1.05) translateX(-50%);
         }
         h1::after {
             transform: scaleX(1);
@@ -70,10 +102,10 @@
 
 @keyframes zoomIn {
     0% {
-        transform: scale(1.05);
+        transform: scale(1.05) translateX(-50%);
     }
 
     100% {
-        transform: scale(1.01);
+        transform: scale(1.01) translateX(-50%);
     }
 }
