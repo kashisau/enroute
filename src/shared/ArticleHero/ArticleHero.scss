@@ -72,8 +72,6 @@
         min-height: 100%;
         top: 0;
 
-        animation-name: zoomIn;
-        animation-duration: 7s;
         transform: scale(1.01) translateX(-50%);
         transform-origin: 25% center;
         position: relative;
@@ -97,15 +95,5 @@
         h1::after {
             transform: scaleX(1);
         }
-    }
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(1.05) translateX(-50%);
-    }
-
-    100% {
-        transform: scale(1.01) translateX(-50%);
     }
 }

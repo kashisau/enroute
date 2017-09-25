@@ -28,7 +28,7 @@ const sampleArticles = [
         "id": "1002",
         "title": "Some article index 2002",
         "slug": "some-article-index-2002",
-        "heroImage": "https://cdn-images-1.medium.com/max/2000/1*-v9a_aweRSsi3BAWeqb-yQ.jpeg",
+        "heroImage": "static/assets/images/Hagia-Sophia.jpg",
         "published": "Aug 27, 2017"
     }
 ];
