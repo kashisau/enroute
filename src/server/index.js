@@ -28,7 +28,7 @@ const sampleArticles = [
         "id": "1002",
         "title": "Some article index 2002",
         "slug": "some-article-index-2002",
-        "heroImage": "static/assets/images/Hagia-Sophia.jpg",
+        "heroImage": "/static/assets/images/Hagia-Sophia.jpg",
         "published": "Aug 27, 2017"
     }
 ];

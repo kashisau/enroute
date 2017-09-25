@@ -49,7 +49,7 @@
                 display: block;
                 background-color: #fff;
                 opacity: 0.75;
-                height: 0.1em;
+                height: 0.05em;
                 width: 100%;
                 position: relative;
                 bottom: 0px;
@@ -82,6 +82,28 @@
         transition:
             filter 400ms ease-in-out,
             transform 400ms ease-in-out;
+
+        @media (orientation:portrait) { 
+            & {
+                width: calc(100vh / 9 * 16);
+                height: 100%;
+            }
+        }
+
+        @media (orientation:landscape) { 
+            @media (min-aspect-ratio: 16/9) { 
+                & {
+                    height: calc(100vw / 16 * 9);
+                    width: 100%;
+                }
+            }
+            @media (max-aspect-ratio: 16/9) { 
+                & {
+                    height: 100%;
+                    width: calc(100vh / 9 * 16);
+                }
+            }
+        }
     }
 
     &.is-active {

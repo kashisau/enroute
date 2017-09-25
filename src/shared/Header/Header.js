@@ -26,7 +26,7 @@ class Header extends React.Component {
             <a className="Header-logo" href="/" title="En route homepage"><img src="/static/assets/images/logo.svg" /></a>
             <nav className="Header-menu">
                 <MenuNavLink active={activePage === pages["about"]} href="about" title="About this blog">About</MenuNavLink>
-                <MenuNavLink active={activePage === pages["kashi"]} href="kashi" title="About Kashi">Kashi</MenuNavLink>
+                {/* <MenuNavLink active={activePage === pages["kashi"]} href="kashi" title="About Kashi">Kashi</MenuNavLink> */}
                 <MenuNavLink active={activePage === pages["contact"]} href="contact" title="Contact Kashi">Contact</MenuNavLink>
             </nav>
         </header>
