@@ -8,10 +8,12 @@
  */
 import React from 'react';
 import ArticleHero from '../ArticleHero/ArticleHero';
+import HeroPicker from '../HeroPicker/HeroPicker';
 import './Home.scss';
 
 export default ({articles}) => (
     <div className="Home">
         {articles.map((article, key) => <ArticleHero article={article} key={key} />)}
+        <HeroPicker articles={articles} />
     </div>
 );

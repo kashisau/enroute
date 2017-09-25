@@ -1,0 +1,16 @@
+.HeroTile {
+    display: inline-block;
+    width: calc(25% - 2.5em);
+
+    font-size: 1em;
+    padding: 1em 2em 4em 0.5em;
+
+    a {
+        color: #fff;
+        font-family: Merriweather, serif;
+        text-decoration: none;
+
+        letter-spacing: -0.075em;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.75);
+    }
+}

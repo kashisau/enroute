@@ -1,0 +1,12 @@
+.HeroPicker {
+    font-size: 1rem;
+    z-index: 30;
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+    width: calc(100% - 8em);
+    margin: 0 4em;
+
+    border-top: 0.5px solid rgba(255,255,255,0.6);
+}
