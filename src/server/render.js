@@ -20,6 +20,7 @@ export default (jsxPayload, articles) => `<!DOCTYPE html>
         ${articles ? `
             <script type="text/javascript">window.__articles__ = ${JSON.stringify(articles)};</script>
             <script type="text/javascript" src="/static/client.js"></script>
+            <script type="text/javascript" src="https://raw.githubusercontent.com/ckrack/scrollsnap-polyfill/develop/dist/scrollsnap-polyfill.js"></script>
         ` : ''}
     </body>
 </html>`;

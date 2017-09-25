@@ -6,8 +6,21 @@
 
     height: 96vh;
     top: 0;
-    
+
     position: absolute;
     overflow-y: hidden;
-    overflow-x: scroll;
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    scroll-snap-type: mandatory;
+    /* older spec implementation */
+    scroll-snap-destination: 0% 100%;
+    scroll-snap-points-x: repeat(100%);
+
+    -webkit-scroll-snap-type: mandatory;
+    -webkit-scroll-snap-destination: 0% 100%;
+    -webkit-scroll-snap-points-x: repeat(100%);
+
+    &::-webkit-scrollbar { display: none; }
 }
