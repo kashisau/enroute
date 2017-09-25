@@ -1,11 +1,9 @@
 .Header {
     display: block;
     margin: 0;
-    padding: 0 4em;
+    padding: 0 3em;
     z-index: 1000;
-
-    font-size: 0.66em;
-
+    font-size: 1rem;
     position: relative;
 
     &::after {
@@ -19,47 +17,15 @@
 
     &-logo {
         display: inline-block;
-        padding: 2em;
+        padding: 1.5em;
         img {
-            height: 8em;
+            height: 6em;
         }
     }
 
     .Header-menu {
         display: inline-block;
         float: right;
-        margin: 5.125em 0 5.125em 4em;
-
-        a {
-            font-size: 1.75em;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-family: "PT Sans", sans-serif;
-            font-weight: bold;
-
-            padding: 0 1em;
-            color: #ffffff;
-            text-shadow: rgba(0,0,0,0.65) 0px 2px 4px;
-            position: relative;
-            
-            &::after {
-                content: ' ';
-                display: block;
-                background-color: #fff;
-                opacity: 0.75;
-                height: 0.1em;
-                width: 100%;
-                position: absolute;
-                bottom: 0px;
-                z-index: 21;
-    
-                box-shadow: rgba(0,0,0,0.65) 0px 2px 4px;
-    
-                transform: scaleX(0);
-                transform-origin: 0 0;
-    
-                transition: transform 200ms ease-in-out;
-            }
-        }
+        margin: 3.75em 0 3.75em 4em;
     }
 }

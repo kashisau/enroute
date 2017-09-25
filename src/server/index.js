@@ -30,6 +30,20 @@ const sampleArticles = [
         "slug": "some-article-index-2002",
         "heroImage": "/static/assets/images/Hagia-Sophia.jpg",
         "published": "Aug 27, 2017"
+    },
+    {
+        "id": "1001",
+        "title": "Some article index 1001",
+        "slug": "some-article-index-1001",
+        "heroImage": "/static/assets/images/Sofia.jpg",
+        "published": "Aug 27, 2017"
+    },
+    {
+        "id": "1000",
+        "title": "Some article index 0000",
+        "slug": "some-article-index-0000",
+        "heroImage": "/static/assets/images/Kocatepe-Mosque.jpg",
+        "published": "Aug 27, 2017"
     }
 ];
 

@@ -3,4 +3,11 @@
     min-height: 96%;
     display: block;
     background: #e1e2e3;
+
+    height: 96vh;
+    top: 0;
+    
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
