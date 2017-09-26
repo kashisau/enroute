@@ -41,7 +41,9 @@
         .ArticleHero {
             filter: none;
             transition: none;
-            transition: transform 400ms ease-in-out;
+            animation: none;
+            will-change: transform;
+            transition: transform 800ms ease-in-out;
         }
     }
 }

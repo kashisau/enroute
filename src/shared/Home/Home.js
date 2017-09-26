@@ -26,7 +26,7 @@ class Home extends React.Component {
      * @param {Number} index    The index of the article to switch to.
      */
     changeArticle(index) {
-        if (this.state.index === index) return;
+        if (this.state.activeArticle === index) return;
 
         this.setState({ activeArticle: index, sliding: true });
     }
