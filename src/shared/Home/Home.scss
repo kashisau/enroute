@@ -3,6 +3,7 @@
     min-height: 96%;
     display: block;
     background: #e1e2e3;
+    position: absolute;
 
     height: 96vh;
     top: 0;
@@ -23,4 +24,24 @@
     -webkit-scroll-snap-points-x: repeat(100%);
 
     &::-webkit-scrollbar { display: none; }
+
+    @for $i from 0 through 3 {
+        &-article-#{$i} {
+            .ArticleHero {
+                @for $j from 1 through 4 {
+                    &:nth-child(#{$j}) {
+                        transform: translateX(($j - $i - 1) * 100vw); 
+                    }
+                }    
+            }
+        }
+    }
+
+    &.is-sliding {
+        .ArticleHero {
+            filter: none;
+            transition: none;
+            transition: transform 400ms ease-in-out;
+        }
+    }
 }

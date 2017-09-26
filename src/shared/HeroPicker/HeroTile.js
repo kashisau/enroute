@@ -16,10 +16,12 @@ class HeroTile extends React.Component {
 
     render() {
         return <div className={classnames("HeroTile", { "is-active": this.state.active })}><a
-                href={`/article/${this.props.article.slug}`}
+                href={`#/article/${this.props.article.slug}`}
                 title={`Read article '${this.props.article.title}'`}
                 onMouseOver={() => this.setState({ active: true })}
-                onMouseOut={() => this.setState({ active: false })}>{this.props.article.title}</a></div>
+                onMouseOut={() => this.setState({ active: false })}
+                onClick={() => this.props.changeArticle(this.props.articleIndex)}
+                >{this.props.article.title}</a></div>
     }
 }
 

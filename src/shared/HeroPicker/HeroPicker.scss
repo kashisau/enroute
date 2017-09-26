@@ -1,8 +1,8 @@
 .HeroPicker {
     font-size: 1rem;
     z-index: 30;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 4vh;
 
     display: block;
     width: calc(100% - 8em);

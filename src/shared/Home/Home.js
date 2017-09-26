@@ -1,19 +1,52 @@
 /**
  * Home.js
  *
- * (C) 2017 mobile.de GmbH
- *
- * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
- * @since 09 Feb 2017
  */
 import React from 'react';
 import ArticleHero from '../ArticleHero/ArticleHero';
 import HeroPicker from '../HeroPicker/HeroPicker';
+import classnames from 'classnames';
 import './Home.scss';
 
-export default ({articles}) => (
-    <div className="Home">
-        {articles.map((article, key) => <ArticleHero article={article} key={key} />)}
-        <HeroPicker articles={articles} />
-    </div>
-);
+class Home extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false,
+            activeArticle: 0,
+            sliding: false
+        };
+
+        this.changeArticle = this.changeArticle.bind(this);
+    }
+
+    /**
+     * Switches to the article indicated.
+     * @param {Number} index    The index of the article to switch to.
+     */
+    changeArticle(index) {
+        if (this.state.index === index) return;
+
+        this.setState({ activeArticle: index, sliding: true });
+    }
+
+    render() {
+        var articles = this.props.articles;
+        return <div
+            className={
+                classnames(
+                    "Home",
+                    "Home-article-" + this.state.activeArticle,
+                    { "is-sliding" : this.state.sliding }
+                )
+            }
+            onTransitionEnd={ () => this.setState( { sliding: false }) }
+            ref={ homeContainer => this.homeContainer = homeContainer }>
+            {articles.map((article, key) => <ArticleHero article={article} key={key} />)}
+            <HeroPicker changeArticle={this.changeArticle} articles={articles} activeArticle={this.state.activeArticle} />
+        </div>
+    }
+}
+
+export default Home;
