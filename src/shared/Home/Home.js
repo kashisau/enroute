@@ -15,10 +15,12 @@ class Home extends React.Component {
         this.state = {
             active: false,
             activeArticle: 0,
+            nextArticle: undefined,
             sliding: false
         };
 
         this.changeArticle = this.changeArticle.bind(this);
+        this.initHeroTransition = this.initHeroTransition.bind(this);
     }
 
     /**
@@ -31,6 +33,10 @@ class Home extends React.Component {
         this.setState({ activeArticle: index, sliding: true });
     }
 
+    initHeroTransition() {
+        this.setState( { sliding: false });
+    }
+
     render() {
         var articles = this.props.articles;
         return <div
@@ -41,9 +47,9 @@ class Home extends React.Component {
                     { "is-sliding" : this.state.sliding }
                 )
             }
-            onTransitionEnd={ () => this.setState( { sliding: false }) }
+            onTransitionEnd={this.initHeroTransition}
             ref={ homeContainer => this.homeContainer = homeContainer }>
-            {articles.map((article, key) => <ArticleHero article={article} key={key} />)}
+            {articles.map((article, key) => <ArticleHero article={article} key={key} active={this.state.activeArticle === key} />)}
             <HeroPicker changeArticle={this.changeArticle} articles={articles} activeArticle={this.state.activeArticle} />
         </div>
     }

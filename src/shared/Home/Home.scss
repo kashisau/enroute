@@ -41,9 +41,16 @@
         .ArticleHero {
             filter: none;
             transition: none;
-            animation: none;
             will-change: transform;
             transition: transform 800ms ease-in-out;
+
+            h1 {
+                
+            }
+
+            &-image {
+                transition-delay: 800ms;
+            }
         }
     }
 }

@@ -83,10 +83,10 @@
         min-height: 100%;
         top: 0;
 
-        transform: scale(1.01) translateX(-50%);
-        transform-origin: 25% center;
+        transform: scale(1.01);
+        transform-origin: center center;
         position: relative;
-        left: 50%;
+        left: 0%;
 
         z-index: 10;
 
@@ -117,16 +117,24 @@
         }
     }
 
-    &.is-active {
+    &.is-hovered {
         .ArticleHero-image {
             transition:
                 filter 1s ease-in-out,
                 transform 5s ease-in-out;
             filter: blur(3px);
-            transform: scale(1.05) translateX(-50%);
         }
         h1::after {
             transform: scaleX(1);
+        }
+    }
+
+    &.is-active {
+        .ArticleHero-image {
+            transition:
+                filter 1s ease-in-out,
+                transform 10s ease-in;
+            transform: scale(1.1);
         }
     }
 }

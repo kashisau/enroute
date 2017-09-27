@@ -15,18 +15,18 @@ class ArticleHero extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            hovered: false
         };
     }
 
     render() {
-        return <div className={classnames("ArticleHero", { "is-active": this.state.active })}>
+        return <div className={classnames("ArticleHero", { "is-hovered": this.state.hovered }, { "is-active" : this.props.active })}>
             <div className="ArticleHero-heading">
                 <a
                     href={`/article/${this.props.article.slug}`}
                     title={`Read article '${this.props.article.title}'`}
-                    onMouseOver={() => this.setState({ active: true })}
-                    onMouseOut={() => this.setState({ active: false })}>
+                    onMouseOver={() => this.setState({ hovered: true })}
+                    onMouseOut={() => this.setState({ hovered: false })}>
                     <h1>{this.props.article.title}</h1>
                 </a>
             </div>
