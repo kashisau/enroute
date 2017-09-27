@@ -133,8 +133,17 @@
         .ArticleHero-image {
             transition:
                 filter 1s ease-in-out,
-                transform 10s ease-in;
-            transform: scale(1.1);
+                transform 20s ease-in;
+            transform: scale(1.2);
+        }
+
+        h1 {
+            transform: translateY(0);
+            opacity: 1;
+    
+            transition:
+                transform 400ms ease-in-out,
+                opacity 400ms ease-in-out;
         }
     }
 }

@@ -33,8 +33,9 @@ class Home extends React.Component {
         this.setState({ activeArticle: index, sliding: true });
     }
 
-    initHeroTransition() {
-        this.setState( { sliding: false });
+    initHeroTransition(e) {
+        if ( ! e.target.classList.contains("ArticleHero")) return;
+        this.setState({ sliding: false });
     }
 
     render() {

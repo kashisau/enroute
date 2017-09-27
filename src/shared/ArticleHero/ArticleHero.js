@@ -15,8 +15,27 @@ class ArticleHero extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hovered: false
+            hovered: false,
+            imageOffset: 0
         };
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillUnmount = this.componentWillUnmount.bind(this);
+        this.calcImageOffset = this.calcImageOffset.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.calcImageOffset);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.calcImageOffset);
+    }
+
+    calcImageOffset() {
+        const windowWidth = window.innerWidth,
+            imageSize = (this.image)? this.image.width : 2650,
+            offset = (windowWidth - imageSize) / 2;
+        this.setState({ imageOffset: offset });
     }
 
     render() {
@@ -30,7 +49,12 @@ class ArticleHero extends React.Component {
                     <h1>{this.props.article.title}</h1>
                 </a>
             </div>
-            <img className="ArticleHero-image" src={this.props.article.heroImage} />
+            <img
+                className="ArticleHero-image"
+                onLoad={e => console.log("Image loaded", e)}
+                src={this.props.article.heroImage}
+                style={{ marginLeft: this.state.imageOffset }}
+                ref={ img => this.image = img } />
         </div>
     }
 }

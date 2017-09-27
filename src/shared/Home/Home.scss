@@ -43,13 +43,19 @@
             transition: none;
             will-change: transform;
             transition: transform 800ms ease-in-out;
-
-            h1 {
-                
-            }
+            transition-delay: 400ms;
 
             &-image {
-                transition-delay: 800ms;
+                transition-delay: 2000ms;
+            }
+
+            h1 {
+                transform: translateY(50%);
+                opacity: 0;
+
+                transition:
+                    transform 400ms ease-in-out,
+                    opacity 400ms ease-in-out;
             }
         }
     }
