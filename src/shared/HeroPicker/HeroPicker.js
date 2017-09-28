@@ -12,12 +12,11 @@ class HeroPicker extends React.Component {
         super(props);
         this.state = {
             active: false,
-            tile: 0
         };
     }
 
     render() {
-        return <div className={classnames("HeroPicker", { "is-active": this.state.active }, "HeroPicker-tile" + this.state.tile)}>
+        return <div className={classnames("HeroPicker", { "is-active": this.state.active }, "HeroPicker-tile-" + this.props.activeArticle)}>
             {
                 this.props.articles.map(
                     (article, key) => 

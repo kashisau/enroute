@@ -43,6 +43,7 @@ class ArticleHero extends React.Component {
     render() {
         return <div className={classnames("ArticleHero", { "is-hovered": this.state.hovered }, { "is-active" : this.props.active })}>
             <div className="ArticleHero-heading">
+                <span className="ArticleHero-headingType">Article</span>
                 <a
                     href={`/article/${this.props.article.slug}`}
                     title={`Read article '${this.props.article.title}'`}

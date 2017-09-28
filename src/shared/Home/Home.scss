@@ -35,6 +35,12 @@
                 }    
             }
         }
+
+        .HeroPicker-tile-#{$i} {
+            &::before {
+                transform: translateX($i * 100%); 
+            }
+        }
     }
 
     &.is-sliding {
@@ -47,6 +53,15 @@
 
             &-image {
                 transition-delay: 2000ms;
+            }
+
+            &-headingType {
+                opacity: 0;
+                transform: translateX(-10%);
+
+                transition:
+                    transform 400ms ease-in-out,
+                    opacity 400ms ease-in-out;
             }
 
             h1 {

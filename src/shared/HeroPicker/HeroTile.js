@@ -12,6 +12,17 @@ class HeroTile extends React.Component {
         this.state = {
             active: false
         };
+
+        this.changeArticle = this.changeArticle.bind(this);
+    }
+
+    changeArticle(e) {
+        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
+        e.nativeEvent.preventDefault();
+
+        this.props.changeArticle(this.props.articleIndex);
+        return false;
     }
 
     render() {
@@ -20,7 +31,7 @@ class HeroTile extends React.Component {
                 title={`Read article '${this.props.article.title}'`}
                 onMouseOver={() => this.setState({ active: true })}
                 onMouseOut={() => this.setState({ active: false })}
-                onClick={() => this.props.changeArticle(this.props.articleIndex)}
+                onClick={this.changeArticle}
                 >{this.props.article.title}</a></div>
     }
 }
