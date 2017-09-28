@@ -25,6 +25,7 @@ class ArticleHero extends React.Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.calcImageOffset);
+        if (this.image.complete) this.calcImageOffset();
     }
 
     componentWillUnmount() {
@@ -33,6 +34,7 @@ class ArticleHero extends React.Component {
 
     calcImageOffset() {
         const windowWidth = window.innerWidth,
+            windowHeight = window.innerHeight,
             imageSize = (this.image)? this.image.width : 2650,
             offset = (windowWidth - imageSize) / 2;
         this.setState({ imageOffset: offset });
@@ -51,7 +53,7 @@ class ArticleHero extends React.Component {
             </div>
             <img
                 className="ArticleHero-image"
-                onLoad={e => console.log("Image loaded", e)}
+                onLoad={() => this.calcImageOffset()}
                 src={this.props.article.heroImage}
                 style={{ marginLeft: this.state.imageOffset }}
                 ref={ img => this.image = img } />
