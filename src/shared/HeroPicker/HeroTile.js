@@ -27,7 +27,7 @@ class HeroTile extends React.Component {
 
     render() {
         return <div className={classnames("HeroTile", { "is-active": this.state.active })}><a
-                href={`#/article/${this.props.article.slug}`}
+                href={`/article/${this.props.article.slug}`}
                 title={`Read article '${this.props.article.title}'`}
                 onMouseOver={() => this.setState({ active: true })}
                 onMouseOut={() => this.setState({ active: false })}

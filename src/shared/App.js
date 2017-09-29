@@ -18,6 +18,9 @@ export default ({ articles }) => (
         <Route path="/" exact>
             <Home articles={articles} />
         </Route>
+        <Route path="/article/:articleSlug">
+            <p>This is an article</p>
+        </Route>
     </div>
 );
 

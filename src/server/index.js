@@ -21,7 +21,7 @@ import MParse from './MParse/MParse';
 
 const routes = [
     '/',
-    '/articles/:articleSlug'
+    '/article/:articleSlug'
 ];
 
 const sampleArticles = [
