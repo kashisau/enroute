@@ -12,6 +12,7 @@ export default (jsxPayload, articles) => `<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/static/enroute.css" media="all" />
         <title>En route</title>
     </head>

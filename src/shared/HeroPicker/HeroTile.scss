@@ -1,3 +1,5 @@
+@import '../viewports';
+
 .HeroTile {
     display: inline-block;
     width: calc(25% - 2.5em);
@@ -14,5 +16,9 @@
 
         letter-spacing: -0.075em;
         text-shadow: 0 2px 4px rgba(0,0,0,0.75);
+    }
+
+    @include mobile {
+        display: none;
     }
 }

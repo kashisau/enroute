@@ -11,7 +11,7 @@
     position: absolute;
     overflow-y: hidden;
 
-    overflow-x: hidden;
+    // overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     
     scroll-snap-type: mandatory;
@@ -23,7 +23,7 @@
     -webkit-scroll-snap-destination: 0% 100%;
     -webkit-scroll-snap-points-x: repeat(100%);
 
-    &::-webkit-scrollbar { display: none; }
+    // &::-webkit-scrollbar { display: none; }
 
     @for $i from 0 through 3 {
         &-article-#{$i} {

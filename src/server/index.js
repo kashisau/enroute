@@ -26,17 +26,17 @@ const routes = [
 
 const sampleArticles = [
     {
-        "id": "3001",
-        "title": "Some article index 3001",
-        "slug": "some-article-index-3001",
-        "heroImage": "/static/assets/images/Brasov.jpg",
-        "published": "Aug 27, 2017"
-    },
-    {
         "id": "2002",
         "title": "Some article index 2002",
         "slug": "some-article-index-2002",
         "heroImage": "/static/assets/images/Hagia-Sophia.jpg",
+        "published": "Aug 27, 2017"
+    },
+    {
+        "id": "3001",
+        "title": "Some article index 3001",
+        "slug": "some-article-index-3001",
+        "heroImage": "/static/assets/images/Brasov.jpg",
         "published": "Aug 27, 2017"
     },
     {

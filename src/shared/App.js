@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import Home from './Home/Home';
 import Header from './Header/Header';
 import { Link, Route } from 'react-router-dom';
+import './_viewports.scss';
 import './App.scss';
 
 export default ({ articles }) => (
